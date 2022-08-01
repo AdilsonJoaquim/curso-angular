@@ -1,0 +1,22 @@
+<div class="class">
+    <div *ngIf="canShow">Estamos testando isso porque foi allowed</div>
+    <h2 *ngIf="name ==='Adriano'; else nameNotFound">O nome é  {{name}}</h2>
+    <ng-template #nameNotFound>
+        <div>
+            <h2 [ngStyle]="{'color':'red'}">
+                O nome não foi encontrado!
+            </h2>
+        </div>
+
+    </ng-template>
+
+<div *ngIf="idade>= 18; else menorDeIdade">A sua idade é {{idade}} e és maior de idade</div>
+<ng-template #menorDeIdade>
+    <div>
+        <p [ngStyle]="{'font-size': '10px'} ">Tu tens {{idade}} e és menor de idade</p>
+    </div>
+
+</ng-template>
+
+
+</div>
