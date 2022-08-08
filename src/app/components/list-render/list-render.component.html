@@ -1,0 +1,34 @@
+
+<div class="class">
+
+    <!-- <h2>Animais:</h2>
+    <ul>
+        <li *ngFor="let animal of animals">
+            Nome: {{animal.name}} - Tipo: {{animal.type}}
+        </li>
+        
+    </ul> -->
+
+    <table >
+        <th>Nome</th>
+        <th>Tipo</th>
+        <th>Acções (0_0)</th>
+        
+        <!--A menção da variável deve ser sempre dentro do escopo 
+        da condição
+        -->
+        <tr *ngFor="let animal of animals">
+          
+          <td>{{animal.name}}</td>
+          <td>{{animal.type}}</td>
+          <td>
+
+              <button (click)="showAge(animal)">Show age</button>
+              <button (click)="removeAnimal(animal)">Apagar</button>
+          </td>
+        </tr>
+      
+      </table>
+
+    <h3>{{animalDetails}}</h3>
+</div>
