@@ -11,7 +11,7 @@ import { ListService } from 'src/app/services/list.service';
 export class ListRenderComponent implements OnInit {
   animals: Animal[] = [];
 
-animalDetails = '';
+animalDetails = ''; //Criado objecto vazio inicialmente
 
   constructor(private listService: ListService) {
     this.getAnimals();
@@ -25,11 +25,12 @@ this.animalDetails = `O pet tem ${animal.name} tem ${animal.age} anos`;
   }
   removeAnimal(animal: Animal){
     console.log('Removendo animal...');
+    alert('Removendo animal...');
    this.animals = this.listService.remove(this.animals, animal);
 
   }
   getAnimals(): void{
-    this.listService.getAll().subscribe((animals) => (this.animals = this.animals));
+    this.listService.getAll().subscribe((animals) => (this.animals = animals));
   }
 
 }
